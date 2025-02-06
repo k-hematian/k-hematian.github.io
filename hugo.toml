@@ -1,0 +1,57 @@
+title = "Kianoosh's Blog"
+description = "test"
+baseURL = 'https://kianoosh.dev/'
+
+languageCode = 'en-us'
+defaultContentLanguage = "en-us"
+enableEmoji = true
+
+[module]
+  [[module.imports]]
+    path = "github.com/hugo-sid/hugo-blog-awesome"
+
+[services.disqus]
+  shortname = 'kianoosh-dev'
+
+[[menus.main]]
+  pageRef="/"
+  name = 'Home'
+  url = '/'
+  weight = 1
+
+[[menus.main]]
+  pageRef="/posts"
+  name = 'Posts'
+  url = '/posts'
+  weight = 2  
+
+[params]
+defaultColor = "dark"
+toc = true
+
+[params.author]
+avatar = "avatar.jpeg"
+name = "Kianoosh Hematian Elmi"
+intro = "Kianoosh.Dev 🌳"
+description = "Sharing my journey of making things better—whether it’s in software, ideas, or everyday challenges. This blog grows with my curiosity."
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/kianoosh-hematian/"
+
+[[params.socialIcons]]
+name = "telegram"
+url = "https://t.me/k_hematian"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/k-hematian"
+
+[[params.socialIcons]]
+name = "x"
+url = "https://x.com/k_hematian"
+
+[[params.socialIcons]]
+name = "Rss"
+url = "index.xml"
+
