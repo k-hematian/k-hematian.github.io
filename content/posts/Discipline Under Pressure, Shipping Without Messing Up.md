@@ -2,6 +2,7 @@
 title: "Discipline Under Pressure: Shipping Without Messing Up"
 date: 2025-08-20
 isStarred: true
+description: "Chaos is a ladder—if you’re disciplined. A real startup story on shipping under pressure without burnout or long-term mess."
 tags:
   - leadership
   - software engineering
