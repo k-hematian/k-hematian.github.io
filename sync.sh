@@ -6,7 +6,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 # Set variables for Obsidian to Hugo copy
-sourcePath="/Users/kianoosh/Documents/Knowledge Base Vault/20 Kianoosh.dev/Posts/"
+sourcePath="/Users/kianoosh/Documents/Knowledge Base Vault/30 Kianoosh.dev/Posts/"
 destinationPath="/Users/kianoosh/Projects/kianoosh.dev/content/posts"
 
 # Check for required commands

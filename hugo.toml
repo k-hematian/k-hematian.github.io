@@ -23,7 +23,8 @@ enableEmoji = true
   pageRef="/posts"
   name = 'Posts'
   url = '/posts'
-  weight = 2  
+  weight = 2
+
 
 [params]
 defaultColor = "dark"
@@ -52,6 +53,13 @@ name = "x"
 url = "https://x.com/k_hematian"
 
 [[params.socialIcons]]
+name = "mastodon"
+url = "https://mastodon.social/@k_hematian"
+
+[[params.socialIcons]]
 name = "Rss"
 url = "index.xml"
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
