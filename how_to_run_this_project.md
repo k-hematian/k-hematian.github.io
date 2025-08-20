@@ -1,4 +1,3 @@
-
 # How to Run This Project
 
 This is a Hugo-based blog project that syncs content from an Obsidian vault. Here's how to run it:
