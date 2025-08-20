@@ -37,7 +37,7 @@ Product and business teams were in a rush, phones ringing nonstop, demanding spe
 
 ---
 ## Priorities and Strategy
-As the technical lead, my first job was to remove noise so the team could focus on engineering, not firefighting.  
+As the technical lead, my first job was to remove noise so the team could focus on engineering, not firefighting. **Stress is a luxury you can’t afford when you need to build something robust.**
 
 We defined four priorities:
 1. **No fraud**  
