@@ -82,4 +82,4 @@ The solutions weren’t rocket science — the key was *how* we approached them.
 
 ---
 [^1]: [Technical Debt Quadrant from Martin Fowler](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html)  
-[^2]: [A mess is not a Technical Debt from Uncle Bob](https://blog.cleancoder.com/uncle-bob/2010/12/05/MessIsNotTechnicalDebt.html)
+[^2]: [A mess is not a Technical Debt from Uncle Bob](https://sites.google.com/site/unclebobconsultingllc/a-mess-is-not-a-technical-debt)
