@@ -29,10 +29,11 @@ The business proposed a bold (and expensive) idea: offer free subscriptions betw
 
 Product and business teams were in a rush, phones ringing nonstop, demanding speed and “magic” while carrying hidden assumptions. Some examples:
 
-- Free subscriptions without credit cards? Potential fraud.
-- Marketing campaigns and call centers ready? Traffic spikes incoming.
-- Giving something free that was always paid? New entities, new logic.
-- Urgent situation? Unknowns and little debugging capacity — must work flawlessly.
+- Free subscriptions? Without a credit card? Instant activation? A paradise for fraudsters — we needed safeguards.
+- Massive marketing campaigns and multiple call centers ready? That meant sudden spikes in traffic and load.
+- Giving something away for free when it was always paid before? That introduced new concepts and entities into our system.
+- An urgent launch? That guaranteed unknowns waiting right after release, with little capacity left for debugging — so reliability was non-negotiable.
+
 
 ---
 ## Priorities and Strategy
