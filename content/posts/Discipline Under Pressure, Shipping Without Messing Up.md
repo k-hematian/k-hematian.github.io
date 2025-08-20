@@ -8,7 +8,10 @@ tags:
   - software engineering
   - technical debt
   - startup
+image: /images/squid-game-umbrella-cookie-1536x913.jpg
 ---
+![squid game umbrella cookie](/images/squid-game-umbrella-cookie-1536x913.jpg)
+
 ## The Reality of Urgency in Startups
 It’s crucial for every senior software engineer, technical leader, or anyone accountable for delivering technical solutions to know how to handle urgent tasks wisely. Let’s call this person a *leader* — and today, that’s you.
 
