@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 25 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://kianoosh.dev/tags/learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Maintenance Cliff: LLMs and the Learning Loop</title>
-      <link>https://kianoosh.dev/posts/2026-01-25-the-maintenance-cliff-llms-and-the-learning-loop/</link>
+      <link>https://kianoosh.dev/posts/2025-12-25-the-maintenance-cliff-llms-and-the-learning-loop/</link>
       <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://kianoosh.dev/posts/2026-01-25-the-maintenance-cliff-llms-and-the-learning-loop/</guid>
+      <guid>https://kianoosh.dev/posts/2025-12-25-the-maintenance-cliff-llms-and-the-learning-loop/</guid>
       
       <description>&lt;h2 id=&#34;the-assembly-line-fallacy&#34;&gt;The Assembly Line Fallacy&lt;/h2&gt;
 &lt;p&gt;In our industry, there is a persistent temptation to treat software engineering like an assembly line. We constantly aim to abstract work into higher-level languages, reusable components, and &amp;ldquo;black box&amp;rdquo; services to increase velocity.&lt;/p&gt;
