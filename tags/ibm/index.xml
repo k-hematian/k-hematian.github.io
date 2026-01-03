@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ibm on Kianoosh&#39;s Blog</title>
+    <link>https://kianoosh.dev/tags/ibm/</link>
+    <description>Recent content in Ibm on Kianoosh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 29 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://kianoosh.dev/tags/ibm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Engineering for Exabytes: Lessons from IBM COS</title>
+      <link>https://kianoosh.dev/posts/2025-12-29-engineering-for-exabytes-lessons-from-ibm-cos/</link>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-12-29-engineering-for-exabytes-lessons-from-ibm-cos/</guid>
+      
+      <description>&lt;h2 id=&#34;beyond-standard-storage&#34;&gt;Beyond Standard Storage&lt;/h2&gt;
+&lt;p&gt;After &lt;a href=&#34;https://kianoosh.dev/posts/2025-12-28-open-source-is-not-enough-the-post-minio-era&#34;&gt;my last post&lt;/a&gt; on the MinIO shift, I started going down the rabbit hole. We often take object storage for granted, but when you step back and ask, &lt;em&gt;&amp;ldquo;How do you actually manage data at an Exabyte scale?&amp;rdquo;&lt;/em&gt;, the answers get fascinating.&lt;/p&gt;
+&lt;p&gt;How do you design a system that reaches 15-nines of durability without bankrupting the company on hardware?&lt;/p&gt;
+&lt;p&gt;I recently found an IBM Redpaper on their Cloud Object Storage (COS) that peels back the layers. It explains the engineering choices required to operate at that magnitude.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

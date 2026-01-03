@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">The Architecture of Evolution: Why the Lakehouse is Inevitable | Kianoosh&#39;s Blog</title>
+<meta property="og:title" content="The Architecture of Evolution: Why the Lakehouse is Inevitable | Kianoosh&#39;s Blog" />
+<meta name="twitter:title" content="The Architecture of Evolution: Why the Lakehouse is Inevitable | Kianoosh&#39;s Blog" />
+<meta itemprop="name" content="The Architecture of Evolution: Why the Lakehouse is Inevitable | Kianoosh&#39;s Blog" />
+<meta name="application-name" content="The Architecture of Evolution: Why the Lakehouse is Inevitable | Kianoosh&#39;s Blog" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="Great architecture isn&#39;t about chasing tools. A deep dive into the CIDR 2021 paper on why the &#39;Two-Tier&#39; architecture is obsolete and how the Lakehouse works under the hood.">
+<meta itemprop="description" content="Great architecture isn&#39;t about chasing tools. A deep dive into the CIDR 2021 paper on why the &#39;Two-Tier&#39; architecture is obsolete and how the Lakehouse works under the hood." />
+<meta property="og:description" content="Great architecture isn&#39;t about chasing tools. A deep dive into the CIDR 2021 paper on why the &#39;Two-Tier&#39; architecture is obsolete and how the Lakehouse works under the hood." />
+<meta name="twitter:description" content="Great architecture isn&#39;t about chasing tools. A deep dive into the CIDR 2021 paper on why the &#39;Two-Tier&#39; architecture is obsolete and how the Lakehouse works under the hood." />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en-us" href="https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2026-01-01T00:00:00Z />
+    <meta property="article:published_time" content=2026-01-01T00:00:00Z />
+    <meta property="og:url" content="https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable/" />
+
+    
+    <meta property="og:article:author" content="Kianoosh Hematian Elmi" />
+    <meta property="article:author" content="Kianoosh Hematian Elmi" />
+    <meta name="author" content="Kianoosh Hematian Elmi" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "The Architecture of Evolution: Why the Lakehouse is Inevitable",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2026-01-01",
+        "description": "Great architecture isn't about chasing tools. A deep dive into the CIDR 2021 paper on why the 'Two-Tier' architecture is obsolete and how the Lakehouse works under the hood.",
+        "wordCount":  1668 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2026-01-01",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Kianoosh\u0027s Blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.140.2">
+
+    
+    <meta property="og:url" content="https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable/">
+  <meta property="og:site_name" content="Kianoosh&#39;s Blog">
+  <meta property="og:title" content="The Architecture of Evolution: Why the Lakehouse is Inevitable">
+  <meta property="og:description" content="Great architecture isn&#39;t about chasing tools. A deep dive into the CIDR 2021 paper on why the &#39;Two-Tier&#39; architecture is obsolete and how the Lakehouse works under the hood.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-01T00:00:00+00:00">
+    <meta property="article:tag" content="Data Engineering">
+    <meta property="article:tag" content="Architecture">
+    <meta property="article:tag" content="Lakehouse">
+    <meta property="article:tag" content="System Design">
+    <meta property="article:tag" content="Paper Review">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Architecture of Evolution: Why the Lakehouse is Inevitable">
+  <meta name="twitter:description" content="Great architecture isn&#39;t about chasing tools. A deep dive into the CIDR 2021 paper on why the &#39;Two-Tier&#39; architecture is obsolete and how the Lakehouse works under the hood.">
+
+
+    
+
+    <link rel="canonical" href="https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable/">
+    <link href="/style.min.e390ba7da26222f4dc42a349955d76dbbe44e5ce2535a43de5a70633a0a9ec3c.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="https://kianoosh.dev/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="https://kianoosh.dev/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        Home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        Posts
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">The Architecture of Evolution: Why the Lakehouse is Inevitable</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-01-01T00:00:00&#43;00:00" itemprop="datePublished"> Jan 1, 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-structural-bottleneck">The Structural Bottleneck</a></li>
+    <li><a href="#summary-notes-lakehouse-architecture">Summary Notes: Lakehouse Architecture</a>
+      <ul>
+        <li><a href="#history">History</a></li>
+        <li><a href="#solutions-the-lakehouse-architecture">Solutions: The Lakehouse Architecture</a></li>
+        <li><a href="#optimization-to-reach-sql-performance">Optimization to Reach SQL Performance</a></li>
+        <li><a href="#performance-result">Performance Result</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="the-structural-bottleneck">The Structural Bottleneck</h2>
+<p>In <a href="/posts/2025-12-27-the-lakehouse-bridging-the-gap">an earlier post</a>, I touched on why Data Lakes emerged. But to understand where the industry is going next, we need to understand the history of how we got here.</p>
+<p>Great architecture isn&rsquo;t about chasing new tools; it&rsquo;s about recognizing the structural bottlenecks that force systems to evolve.</p>
+<p>The paper &ldquo;Lakehouse: A New Generation of Open Platforms&rdquo; (CIDR 2021) is a brilliant breakdown of this evolution. It maps the shift from Gen 1 (Warehouses) to Gen 2 (Lakes + Warehouses) and explains why the industry is inevitably moving to Gen 3 (Lakehouse).</p>
+<p>The paper argues that the standard &ldquo;Two-Tier&rdquo; architecture (gluing a Warehouse to a Lake) is obsolete. It creates Data Swamps, high TCO, and forces engineers to maintain complex Lambda Architectures just to handle streaming and batch together.</p>
+<p>For those interested in system internals, the paper details how they achieve Warehouse performance on top of open object storage (S3/ADLS) using:</p>
+<ul>
+<li><strong>Metadata Layers:</strong> Implementing ACID transactions and Snapshot Isolation directly on Parquet/ORC files.</li>
+<li><strong>Data Skipping:</strong> Using Z-Order Space-Filling Curves and Bloom Filters to minimize I/O without proprietary indexing.</li>
+<li><strong>Unified Engines:</strong> Decoupling compute from storage to run SQL and ML on the exact same dataset without copying.</li>
+</ul>
+<p>I’ve attached the original paper below<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, along with my personal summarized notes (a cheat sheet of the key diagrams and concepts) to save you some time.</p>
+<hr>
+<h2 id="summary-notes-lakehouse-architecture">Summary Notes: Lakehouse Architecture</h2>
+<p>This document reviews the seminal paper <em>&ldquo;Lakehouse: A New Generation of Open Platforms that Unify Data Warehousing and Advanced Analytics&rdquo;</em> (CIDR 2021).</p>
+<p>In this paper, the team at <strong>Databricks</strong> (including CEO Ali Ghodsi) forecasts the industry&rsquo;s shift toward a unified data management architecture. They argue that the &ldquo;Two-Tier&rdquo; architecture (Data Lakes + Data Warehouses) is becoming obsolete due to cost, complexity, and staleness. They propose the <strong>Lakehouse Architecture</strong>: a third-generation platform that combines the low-cost storage of Data Lakes with the performance and ACID guarantees of Data Warehouses.</p>
+<h3 id="history">History</h3>
+<p><img src="/images/lakehouse-paper-generations.png" alt="image"></p>
+<h4 id="first-generation-platforms">First Generation Platforms</h4>
+<p>The history of storing data in one place dates back to when systems scaled and data got distributed. Then some business requirements became prominent:</p>
+<ul>
+<li>Access to data for Business Intelligence (making decisions based on data).</li>
+<li>Call centers need to access integrated data to answer customers.</li>
+</ul>
+<p>To answer this demand, the first generation of Data Warehouse systems was provided. In these systems, all data from operational databases was gathered into one data warehouse to satisfy these demands. They were <strong>Schema-on-write</strong> and had negligible time drift with operational databases.</p>
+<p>About one decade ago (early 2010s), this architecture faced some challenges:</p>
+<ol>
+<li><strong>Coupled Resources:</strong> Typically the storage and compute resources were coupled to an <strong>On-Premise</strong> appliance. So companies had to provision resources and pay for peak usage for the entire dataset, which was growing rapidly.</li>
+<li><strong>Data Variety:</strong> Unstructured datasets were growing, and data warehouses could not store or query formats such as video, audio, and text documents efficiently.</li>
+</ol>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li><strong>Schema-on-write</strong> for data integrity and cleanliness.</li>
+<li>Simple and single <strong>Extract-Transform-Load (ETL)</strong> step.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li><strong>Schema-on-write</strong> decreases <strong>Agility</strong> and <strong>Evolvability</strong>.</li>
+<li>High cost due to coupled compute and storage.</li>
+</ul>
+<h4 id="current-two-tier-architecture">Current Two-tier Architecture</h4>
+<p>To solve these challenges, the second generation data analytics platforms started offloading all raw data into <strong>Data Lakes</strong>: low-cost storage systems with a file API that hold data in generic and usually open file formats, such as <strong>Apache Parquet</strong> and <strong>Optimized Row Columnar (ORC)</strong>. This approach was started by the <strong>Apache Hadoop</strong> movement.</p>
+<p>This architecture, by implementing <strong>Schema-on-read</strong> and leveraging <strong>Hadoop File System (HDFS)</strong>, enabled the agility of storing <em>any</em> data at low cost. However, this often led to the <strong>&ldquo;Data Swamp&rdquo;</strong> problem, where reliability and quality were compromised downstream. This architecture also includes <strong>Extract-Transform-Load (ETL)</strong> to load a subset of data into a downstream <strong>Data Warehouse</strong> for the most important decision support and BI applications.</p>
+<p>From 2015 onward, cloud data lakes such as <strong>AWS S3</strong>, <strong>Azure Data Lake Storage (ADLS)</strong>, and <strong>Google Cloud Storage (GCS)</strong> started replacing <strong>Hadoop File System (HDFS)</strong>.</p>
+<ul>
+<li><strong>Decoupled Compute and Storage:</strong> Cloud lakes allowed storage to scale infinitely and cheaply, independent of compute engines.</li>
+<li>Superior <strong>Data Durability</strong> (often &gt; 10 nines) and <strong>Geo Replication</strong>.</li>
+</ul>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li><strong>Schema-on-read</strong> for <strong>Evolvability</strong> and <strong>Agility</strong>.</li>
+<li>Cheap storage to be able to keep decades of data.</li>
+<li>Use of <strong>Open Formats</strong> to be directly accessible for a wide range of other analytics engines such as <strong>Machine Learning</strong> systems.</li>
+</ul>
+<p><strong>Disadvantages:</strong></p>
+<ul>
+<li><strong>Reliability:</strong> As there are two steps in this architecture—first ingest data into a <strong>Data Lake</strong> and then <strong>ETL</strong> to a data warehouse—the chance of inconsistency between these sources is higher and demands continuous engineering. Each step of ETL also increases the risk of bugs due to differences between the datalake and warehouse engines.</li>
+<li><strong>Data Staleness:</strong> Data in the warehouse might be stale compared to that of the data lake, with new data frequently taking days to load.</li>
+<li><strong>Limited support for advanced analytics:</strong> Businesses want to ask predictive questions using their warehousing data, such as &ldquo;which customers should I offer discounts to?&rdquo;, but currently there is no compatibility between <strong>Machine Learning</strong> systems such as <strong>TensorFlow</strong>, <strong>PyTorch</strong>, and <strong>XGBoost</strong> and Data Warehouses. Unlike BI queries which extract a small amount of data, these systems need to process large datasets using complex non-SQL code. Reading data via <strong>ODBC</strong> and <strong>JDBC</strong> is inefficient and there is no direct access to data warehouse data files. There are two solutions:
+<ol>
+<li>Add another ETL step.</li>
+<li>Use the data lake directly at the cost of losing <strong>ACID Transactions</strong>, data versioning, and indexing.</li>
+</ol>
+</li>
+<li><strong>Total cost of ownership:</strong> Extra ETL steps, more storage cost due to copying subsets of data from the data lake to the data warehouse, and the extra cost of migrating data from the warehouse to other systems.</li>
+</ul>
+<blockquote>
+<p><strong>Fact: Data Staleness Report</strong></p>
+<p>According to a survey by <a href="https://fivetran.com/blog/analyst-survey">Dimensional Research and Fivetran</a>, 86% of analysts use out-of-date data and 62% report waiting on engineering resources numerous times per month.</p>
+</blockquote>
+<hr>
+<h3 id="solutions-the-lakehouse-architecture">Solutions: The Lakehouse Architecture</h3>
+<p>The current status is the <strong>two-tier</strong> architecture and its challenges. Removing the data lake and storing all data into the data warehouse is not a solution because:</p>
+<ol>
+<li>It does not support data formats such as video/audio/text.</li>
+<li>It does not provide its data efficiently for <strong>Machine Learning</strong> use cases.</li>
+</ol>
+<p>The paper suggests merging these <strong>two tiers</strong> into <strong>one tier</strong> by keeping the best of both:</p>
+<ul>
+<li>SQL Performance, Table versioning, indexing, caching, and optimization of Data Warehouses.</li>
+<li>Open format, cheap storage, evolvability, and agility of Data Lakes.</li>
+</ul>
+<p><img src="/images/lakehouse-paper-architecture.png" alt="image"></p>
+<p>The paper suggests it&rsquo;s possible and provides an architecture for this matter:</p>
+<ol>
+<li>Using <strong>Apache Parquet</strong> or similar open format data files in <strong>Object Storage</strong> as the storage layer.</li>
+<li>Add a transactional <strong>metadata layer</strong> such as <strong>Apache Iceberg</strong>, <strong>Databricks Delta Lake</strong>, and <strong>Apache Hudi</strong> over storage to improve query performance while adding the following features:
+<ol>
+<li>Transactions (<strong>ACID Transactions</strong>).</li>
+<li><strong>Zero-Copy Cloning Technique</strong>.</li>
+<li>Time-travel to past versions of a table.</li>
+<li>Quality enforcement by enforcing schema to prevent writing invalid data (solving the Data Swamp issue).</li>
+</ol>
+</li>
+<li>Computation engines with SQL API such as <strong>Apache Spark</strong> to query the open format data efficiently with help of the provided metadata.</li>
+<li>Computation engines with <strong>Declarative DataFrame APIs</strong> for <strong>Machine Learning</strong> usages.</li>
+</ol>
+<p><strong>Key Architectural Insights:</strong></p>
+<ul>
+<li><strong>Unified Streaming and Batch:</strong> The Lakehouse solves the &ldquo;Lambda Architecture&rdquo; problem. Tables can be treated as a continuous stream of changes, allowing real-time ingestion and batch querying on the same data structures simultaneously.</li>
+<li><strong>Diverse Workloads:</strong> Data Scientists (who need raw data) and BI Analysts (who need curated data) access the <em>same</em> single source of truth without moving data around.</li>
+</ul>
+<p>There are decisions which can be changed in this architecture by time and maturity of the industry:</p>
+<ol>
+<li>What <strong>Open Format</strong> is suitable? Is it better to innovate a new open format to increase performance (at the cost of compatibility)?
+<ul>
+<li><strong>Databricks Delta Lake</strong> decided to use <strong>Apache Parquet</strong> as it&rsquo;s highly adapted in query engines and <strong>Machine Learning</strong> systems.</li>
+</ul>
+</li>
+<li><strong>Where to save metadata?</strong> Storing in a separate DBMS (RAM or SSD) to increase throughput/reduce latency, or alongside the data?
+<ul>
+<li>In <strong>Databricks Delta Lake</strong>, they decided to store the metadata layer into the same <strong>Object Storage</strong> as the other data at rest to decrease maintenance costs and leverage the massive scalability of cloud object stores.</li>
+</ul>
+</li>
+</ol>
+<h3 id="optimization-to-reach-sql-performance">Optimization to Reach SQL Performance</h3>
+<p>To reach SQL performance, there are some places to optimize:</p>
+<ul>
+<li><strong>Caching:</strong> By storing highly used data in fast SSDs or RAM, it&rsquo;s possible to use all &ldquo;closed-world&rdquo; data warehouse engines and reshape data to some form that is simpler to query.</li>
+<li><strong>Auxiliary Data:</strong> Storing auxiliary data to make queries easier. <strong>Databricks Delta Lake</strong> maintains:
+<ul>
+<li>Column min-max statistics for each data file in the table within the same Parquet file used to store the transaction log.</li>
+<li><strong>Bloom Filter</strong> based index.</li>
+</ul>
+</li>
+<li><strong>Data Layout:</strong> Use an optimized data format or optimize the existing data formats as much as possible. <strong>Databricks Delta Lake</strong> supports ordering records using individual dimensions or space-filling curves such as <strong>Z-Order Curve</strong> and Hilbert curves to provide locality across multiple dimensions.</li>
+</ul>
+<p>These optimizations improve:</p>
+<ul>
+<li>In typical workloads, most queries tend to be concentrated against a &ldquo;hot&rdquo; subset of the data which can be easily cached and queried with competitive performance.</li>
+<li>For &ldquo;cold&rdquo; data, the combination of data layout and auxiliary data allows a Lakehouse system to minimize I/O the same way a closed-world proprietary data warehouse would, despite running against a standard open file format.</li>
+</ul>
+<h3 id="performance-result">Performance Result</h3>
+<p><img src="/images/lakehouse-paper-tpc-ds.png" alt="image"></p>
+<blockquote>
+<p>At Databricks, we combined these three Lakehouse optimizations with a new C++ execution engine for Apache Spark called Delta Engine. To evaluate the feasibility of the Lakehouse architecture, Figure 3 compares Delta Engine on TPC-DS at scale factor 30,000 with four widely used cloud data warehouses (from cloud providers as well as third-party companies that run over public clouds), using comparable clusters on AWS, Azure and Google Cloud with 960 vCPUs each and local SSD storage We report the time to run all 99 queries as well as the total cost for customers in each service&rsquo;s pricing model (Databricks lets users choose spot and on-demand instances, so we show both). Delta Engine provides comparable or better performance than these systems at a lower price point.</p>
+</blockquote>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.cidrdb.org/cidr2021/papers/cidr2021_paper17.pdf">Lakehouse: A New Generation of Open Platforms (CIDR 2021)</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+            </div>
+        </article><hr style="margin-top: 40px; margin-bottom: 40px;" />
+<div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "kianoosh-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://www.linkedin.com/in/kianoosh-hematian/" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+<a href="https://t.me/kianoosh_dev" target="_blank" rel="noopener noreferrer me"
+    title="Telegram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.509 1.793.997 3.592 1.48 5.388.16.36.506.494.864.498l-.002.018s.281.028.555-.038a2.1 2.1 0 0 0 .933-.517c.345-.324 1.28-1.244 1.811-1.764l3.999 2.952.032.018s.442.311 1.09.355c.324.022.75-.04 1.116-.308.37-.27.613-.702.728-1.196.342-1.492 2.61-12.285 2.997-14.072l-.01.042c.27-1.006.17-1.928-.455-2.474a1.654 1.654 0 0 0-1.034-.407z" />
+</svg>
+</a>
+<a href="https://github.com/k-hematian" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://x.com/k_hematian" target="_blank" rel="noopener noreferrer me"
+    title="X">
+    <svg viewBox="0 0 1200 1227" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path
+        d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"/>
+</svg>
+</a>
+<a href="https://mastodon.social/@k_hematian" target="_blank" rel="noopener noreferrer me"
+    title="Mastodon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M21.58 13.913c-.29 1.469-2.592 3.121-5.238 3.396-1.379.184-2.737.368-4.185.276-2.368-.092-4.237-.551-4.237-.551 0 .184.014.459.043.643.308 2.294 2.317 2.478 4.22 2.57 1.922 0 3.633-.46 3.633-.46l.079 1.653s-1.344.734-3.738.918c-1.32.091-2.96-.092-4.869-.551-4.14-1.102-4.853-5.507-4.961-10.005-.034-1.285-.013-2.57-.013-3.58 0-4.589 3-5.966 3-5.966 1.513-.734 4.11-1.01 6.808-1.01h.067c2.699 0 5.296.276 6.81 1.01 0 0 3 1.377 3 5.967 0 0 .037 3.304-.419 5.69"
+        stroke="currentColor" />
+    <path
+        d="M17.832 8.633v5h-1.978V8.78c0-1.023-.43-1.542-1.29-1.542-.95 0-1.427.616-1.427 1.834v2.655H11.17V9.072c0-1.218-.476-1.834-1.427-1.834-.86 0-1.29.52-1.29 1.542v4.852H6.475V8.633c0-1.022.26-1.834.782-2.434.538-.6 1.243-.909 2.118-.909 1.012 0 1.779.39 2.286 1.169l.492.827.493-.827c.507-.78 1.274-1.169 2.286-1.169.875 0 1.58.308 2.118.909.522.6.782 1.412.782 2.434"
+        fill="currentColor" stroke="none" />
+</svg>
+</a>
+<a href="index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2026 Kianoosh Hematian Elmi.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer>
+
+
+
+
+
+
+
+    
+    <script src="https://kianoosh.dev/js/main.min.4ee188e1744c19816e95a540b2650ed9f033ea0371e74eac8e717355cfca8741.js" integrity="sha256-TuGI4XRMGYFulaVAsmUO2fAz6gNx506sjnFzVc/Kh0E="></script>
+
+    
+
+</body>
+</html>

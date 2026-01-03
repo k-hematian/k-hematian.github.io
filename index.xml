@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kianoosh&#39;s Blog</title>
+    <link>https://kianoosh.dev/</link>
+    <description>Recent content on Kianoosh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://kianoosh.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Death of the Data Monolith: An Introduction to Data Mesh</title>
+      <link>https://kianoosh.dev/posts/2026-01-03-the-death-of-the-data-monolith-an-introduction-to-data-mesh/</link>
+      <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2026-01-03-the-death-of-the-data-monolith-an-introduction-to-data-mesh/</guid>
+      
+      <description>&lt;h2 id=&#34;the-people-problem-of-data-platforms&#34;&gt;The People Problem of Data Platforms&lt;/h2&gt;
+&lt;p&gt;In my previous &lt;a href=&#34;https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable&#34;&gt;post&lt;/a&gt;, I discussed how the Lakehouse architecture addresses the technical gaps between Data Lakes and Warehouses. But even with state-of-the-art components, will we automatically have a successful data platform? &lt;strong&gt;OF COURSE NOT!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Engineering is easy compared to people. Who is responsible for which part? How does the organization scale as the business scales? These are critical questions an architect must answer before the wrong structure defines the architecture for them (the Conway&amp;rsquo;s Law reverse maneuver).&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>The Architecture of Evolution: Why the Lakehouse is Inevitable</title>
+      <link>https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable/</guid>
+      
+      <description>&lt;h2 id=&#34;the-structural-bottleneck&#34;&gt;The Structural Bottleneck&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&#34;https://kianoosh.dev/posts/2025-12-27-the-lakehouse-bridging-the-gap&#34;&gt;an earlier post&lt;/a&gt;, I touched on why Data Lakes emerged. But to understand where the industry is going next, we need to understand the history of how we got here.&lt;/p&gt;
+&lt;p&gt;Great architecture isn&amp;rsquo;t about chasing new tools; it&amp;rsquo;s about recognizing the structural bottlenecks that force systems to evolve.&lt;/p&gt;
+&lt;p&gt;The paper &amp;ldquo;Lakehouse: A New Generation of Open Platforms&amp;rdquo; (CIDR 2021) is a brilliant breakdown of this evolution. It maps the shift from Gen 1 (Warehouses) to Gen 2 (Lakes + Warehouses) and explains why the industry is inevitably moving to Gen 3 (Lakehouse).&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>The Long Game: Surviving the Forty-Year Career</title>
+      <link>https://kianoosh.dev/posts/2025-12-30-the-long-game-surviving-the-forty-year-career/</link>
+      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-12-30-the-long-game-surviving-the-forty-year-career/</guid>
+      
+      <description>&lt;h2 id=&#34;the-sprint-vs-the-marathon&#34;&gt;The Sprint vs. The Marathon&lt;/h2&gt;
+&lt;p&gt;In our industry, it is easy to get caught up in the immediate: the &amp;ldquo;IPO hunt,&amp;rdquo; the constant job-hopping for a salary bump, or the rush to ship the next feature. We optimize for the next two years, often at the expense of the next twenty.&lt;/p&gt;
+&lt;p&gt;I’ve been reflecting on Will Larson’s concept of &lt;em&gt;&amp;ldquo;The Forty-Year Career.&amp;rdquo;&lt;/em&gt; His argument is a necessary counter-narrative: instead of burning out for short-term wins, we should focus on compounding gains over decades.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Engineering for Exabytes: Lessons from IBM COS</title>
+      <link>https://kianoosh.dev/posts/2025-12-29-engineering-for-exabytes-lessons-from-ibm-cos/</link>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-12-29-engineering-for-exabytes-lessons-from-ibm-cos/</guid>
+      
+      <description>&lt;h2 id=&#34;beyond-standard-storage&#34;&gt;Beyond Standard Storage&lt;/h2&gt;
+&lt;p&gt;After &lt;a href=&#34;https://kianoosh.dev/posts/2025-12-28-open-source-is-not-enough-the-post-minio-era&#34;&gt;my last post&lt;/a&gt; on the MinIO shift, I started going down the rabbit hole. We often take object storage for granted, but when you step back and ask, &lt;em&gt;&amp;ldquo;How do you actually manage data at an Exabyte scale?&amp;rdquo;&lt;/em&gt;, the answers get fascinating.&lt;/p&gt;
+&lt;p&gt;How do you design a system that reaches 15-nines of durability without bankrupting the company on hardware?&lt;/p&gt;
+&lt;p&gt;I recently found an IBM Redpaper on their Cloud Object Storage (COS) that peels back the layers. It explains the engineering choices required to operate at that magnitude.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Open Source is Not Enough: The Post-MinIO Era</title>
+      <link>https://kianoosh.dev/posts/2025-12-28-open-source-is-not-enough-the-post-minio-era/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-12-28-open-source-is-not-enough-the-post-minio-era/</guid>
+      
+      <description>&lt;h2 id=&#34;the-end-of-the-default-choice&#34;&gt;The End of the &amp;ldquo;Default&amp;rdquo; Choice&lt;/h2&gt;
+&lt;p&gt;For years, MinIO has been the reflex choice for S3-compatible object storage in Kubernetes setups, SaaS platforms, and data lakes. It was the standard we all reached for.&lt;/p&gt;
+&lt;p&gt;However, recently (December 3, 2025), the landscape shifted. MinIO officially moved into &lt;strong&gt;maintenance mode&lt;/strong&gt;. This means no new features and, critically, community pull requests are no longer being merged. The development focus has shifted entirely to their commercial offerings.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>The Lakehouse: Bridging the Gap</title>
+      <link>https://kianoosh.dev/posts/2025-12-27-the-lakehouse-bridging-the-gap/</link>
+      <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-12-27-the-lakehouse-bridging-the-gap/</guid>
+      
+      <description>&lt;h2 id=&#34;the-great-divide&#34;&gt;The Great Divide&lt;/h2&gt;
+&lt;p&gt;For years, data architecture has been defined by a strict trade-off.&lt;/p&gt;
+&lt;p&gt;On one side, you have &lt;strong&gt;Data Lakes&lt;/strong&gt;: flexible, cheap, and great for unstructured data. On the other, &lt;strong&gt;Data Warehouses&lt;/strong&gt;: providing strong schemas, high performance, and ACID transactions.&lt;/p&gt;
+&lt;p&gt;Both are valuable. But typically, this forces teams to maintain two separate systems. This introduces &amp;ldquo;glue&amp;rdquo; complexity, significant latency, and the nightmare of data duplication.&lt;/p&gt;
+&lt;h2 id=&#34;enter-the-lakehouse&#34;&gt;Enter the Lakehouse&lt;/h2&gt;
+&lt;p&gt;Recently, I’ve been looking into an architecture that attempts to bring the best of both worlds together: the &lt;strong&gt;Lakehouse&lt;/strong&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>The Human System: Applying Engineering to Leadership</title>
+      <link>https://kianoosh.dev/posts/2025-12-26-the-human-system-applying-engineering-to-leadership/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-12-26-the-human-system-applying-engineering-to-leadership/</guid>
+      
+      <description>&lt;h2 id=&#34;the-transfer-of-fundamentals&#34;&gt;The Transfer of Fundamentals&lt;/h2&gt;
+&lt;p&gt;In a recent article, Mallika Rao (Engineering Manager at Netflix) revisits a familiar friction point in our industry: the transition from maker to manager. She argues that when engineers move into leadership roles, they often stop applying the systems thinking they developed through years of hands-on engineering.&lt;/p&gt;
+&lt;p&gt;This is a massive missed opportunity.&lt;/p&gt;
+&lt;p&gt;We spend years learning how to optimize throughput, manage load, and debug complex interactions. Yet, when we step into management, we often treat the team as something entirely different, governed by vague intuition rather than structural logic. Rao suggests that systems thinking isn&amp;rsquo;t just for code—it is an essential toolkit for leadership.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Discipline Under Pressure: Shipping Without Messing Up</title>
+      <link>https://kianoosh.dev/posts/2025-08-20-discipline-under-pressure-shipping-without-messing-up/</link>
+      <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-08-20-discipline-under-pressure-shipping-without-messing-up/</guid>
+      
+      <description>&lt;p&gt;&lt;img src=&#34;https://kianoosh.dev/images/squid-game-umbrella-cookie-1536x913.jpg&#34; alt=&#34;squid game umbrella cookie&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-reality-of-urgency-in-startups&#34;&gt;The Reality of Urgency in Startups&lt;/h2&gt;
+&lt;p&gt;It’s crucial for every senior software engineer, technical leader, or anyone accountable for delivering technical solutions to know how to handle urgent tasks wisely. Let’s call this person a &lt;em&gt;leader&lt;/em&gt; — and today, that’s you.&lt;/p&gt;
+&lt;p&gt;In some industries, or at certain stages of a company’s lifecycle, urgent requirements hit technical teams constantly. I currently work as a technical lead at a startup (&lt;a href=&#34;https://www.linkedin.com/company/donetech/&#34;&gt;Done&lt;/a&gt;), where the rules of the game seem to change every other week.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

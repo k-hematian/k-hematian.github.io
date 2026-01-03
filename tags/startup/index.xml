@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Startup on Kianoosh&#39;s Blog</title>
+    <link>https://kianoosh.dev/tags/startup/</link>
+    <description>Recent content in Startup on Kianoosh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 20 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://kianoosh.dev/tags/startup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Discipline Under Pressure: Shipping Without Messing Up</title>
+      <link>https://kianoosh.dev/posts/2025-08-20-discipline-under-pressure-shipping-without-messing-up/</link>
+      <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-08-20-discipline-under-pressure-shipping-without-messing-up/</guid>
+      
+      <description>&lt;p&gt;&lt;img src=&#34;https://kianoosh.dev/images/squid-game-umbrella-cookie-1536x913.jpg&#34; alt=&#34;squid game umbrella cookie&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;the-reality-of-urgency-in-startups&#34;&gt;The Reality of Urgency in Startups&lt;/h2&gt;
+&lt;p&gt;It’s crucial for every senior software engineer, technical leader, or anyone accountable for delivering technical solutions to know how to handle urgent tasks wisely. Let’s call this person a &lt;em&gt;leader&lt;/em&gt; — and today, that’s you.&lt;/p&gt;
+&lt;p&gt;In some industries, or at certain stages of a company’s lifecycle, urgent requirements hit technical teams constantly. I currently work as a technical lead at a startup (&lt;a href=&#34;https://www.linkedin.com/company/donetech/&#34;&gt;Done&lt;/a&gt;), where the rules of the game seem to change every other week.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Mesh on Kianoosh&#39;s Blog</title>
+    <link>https://kianoosh.dev/tags/data-mesh/</link>
+    <description>Recent content in Data Mesh on Kianoosh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://kianoosh.dev/tags/data-mesh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Death of the Data Monolith: An Introduction to Data Mesh</title>
+      <link>https://kianoosh.dev/posts/2026-01-03-the-death-of-the-data-monolith-an-introduction-to-data-mesh/</link>
+      <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2026-01-03-the-death-of-the-data-monolith-an-introduction-to-data-mesh/</guid>
+      
+      <description>&lt;h2 id=&#34;the-people-problem-of-data-platforms&#34;&gt;The People Problem of Data Platforms&lt;/h2&gt;
+&lt;p&gt;In my previous &lt;a href=&#34;https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable&#34;&gt;post&lt;/a&gt;, I discussed how the Lakehouse architecture addresses the technical gaps between Data Lakes and Warehouses. But even with state-of-the-art components, will we automatically have a successful data platform? &lt;strong&gt;OF COURSE NOT!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Engineering is easy compared to people. Who is responsible for which part? How does the organization scale as the business scales? These are critical questions an architect must answer before the wrong structure defines the architecture for them (the Conway&amp;rsquo;s Law reverse maneuver).&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

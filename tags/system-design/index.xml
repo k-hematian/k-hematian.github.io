@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>System Design on Kianoosh&#39;s Blog</title>
+    <link>https://kianoosh.dev/tags/system-design/</link>
+    <description>Recent content in System Design on Kianoosh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://kianoosh.dev/tags/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Death of the Data Monolith: An Introduction to Data Mesh</title>
+      <link>https://kianoosh.dev/posts/2026-01-03-the-death-of-the-data-monolith-an-introduction-to-data-mesh/</link>
+      <pubDate>Sat, 03 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2026-01-03-the-death-of-the-data-monolith-an-introduction-to-data-mesh/</guid>
+      
+      <description>&lt;h2 id=&#34;the-people-problem-of-data-platforms&#34;&gt;The People Problem of Data Platforms&lt;/h2&gt;
+&lt;p&gt;In my previous &lt;a href=&#34;https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable&#34;&gt;post&lt;/a&gt;, I discussed how the Lakehouse architecture addresses the technical gaps between Data Lakes and Warehouses. But even with state-of-the-art components, will we automatically have a successful data platform? &lt;strong&gt;OF COURSE NOT!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Engineering is easy compared to people. Who is responsible for which part? How does the organization scale as the business scales? These are critical questions an architect must answer before the wrong structure defines the architecture for them (the Conway&amp;rsquo;s Law reverse maneuver).&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>The Architecture of Evolution: Why the Lakehouse is Inevitable</title>
+      <link>https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2026-01-01-the-architecture-of-evolution-why-the-lakehouse-is-inevitable/</guid>
+      
+      <description>&lt;h2 id=&#34;the-structural-bottleneck&#34;&gt;The Structural Bottleneck&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&#34;https://kianoosh.dev/posts/2025-12-27-the-lakehouse-bridging-the-gap&#34;&gt;an earlier post&lt;/a&gt;, I touched on why Data Lakes emerged. But to understand where the industry is going next, we need to understand the history of how we got here.&lt;/p&gt;
+&lt;p&gt;Great architecture isn&amp;rsquo;t about chasing new tools; it&amp;rsquo;s about recognizing the structural bottlenecks that force systems to evolve.&lt;/p&gt;
+&lt;p&gt;The paper &amp;ldquo;Lakehouse: A New Generation of Open Platforms&amp;rdquo; (CIDR 2021) is a brilliant breakdown of this evolution. It maps the shift from Gen 1 (Warehouses) to Gen 2 (Lakes + Warehouses) and explains why the industry is inevitably moving to Gen 3 (Lakehouse).&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Engineering for Exabytes: Lessons from IBM COS</title>
+      <link>https://kianoosh.dev/posts/2025-12-29-engineering-for-exabytes-lessons-from-ibm-cos/</link>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-12-29-engineering-for-exabytes-lessons-from-ibm-cos/</guid>
+      
+      <description>&lt;h2 id=&#34;beyond-standard-storage&#34;&gt;Beyond Standard Storage&lt;/h2&gt;
+&lt;p&gt;After &lt;a href=&#34;https://kianoosh.dev/posts/2025-12-28-open-source-is-not-enough-the-post-minio-era&#34;&gt;my last post&lt;/a&gt; on the MinIO shift, I started going down the rabbit hole. We often take object storage for granted, but when you step back and ask, &lt;em&gt;&amp;ldquo;How do you actually manage data at an Exabyte scale?&amp;rdquo;&lt;/em&gt;, the answers get fascinating.&lt;/p&gt;
+&lt;p&gt;How do you design a system that reaches 15-nines of durability without bankrupting the company on hardware?&lt;/p&gt;
+&lt;p&gt;I recently found an IBM Redpaper on their Cloud Object Storage (COS) that peels back the layers. It explains the engineering choices required to operate at that magnitude.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
