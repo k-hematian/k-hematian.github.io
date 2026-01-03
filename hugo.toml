@@ -1,5 +1,5 @@
 title = "Kianoosh's Blog"
-description = "test"
+description = "Sharing my journey of making things better—whether it’s in software, ideas, or everyday challenges. This blog grows with my curiosity."
 baseURL = 'https://kianoosh.dev/'
 
 languageCode = 'en-us'
@@ -31,7 +31,7 @@ defaultColor = "dark"
 toc = true
 
 [params.author]
-avatar = "avatar.jpeg"
+avatar = "avatar.jpg"
 name = "Kianoosh Hematian Elmi"
 intro = "Kianoosh.Dev 🌳"
 description = "Sharing my journey of making things better—whether it’s in software, ideas, or everyday challenges. This blog grows with my curiosity."
@@ -42,7 +42,7 @@ url = "https://www.linkedin.com/in/kianoosh-hematian/"
 
 [[params.socialIcons]]
 name = "telegram"
-url = "https://t.me/k_hematian"
+url = "https://t.me/kianoosh_dev"
 
 [[params.socialIcons]]
 name = "github"
