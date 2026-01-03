@@ -105,6 +105,20 @@
     </item>
     
     <item>
+      <title>The Maintenance Cliff: LLMs and the Learning Loop</title>
+      <link>https://kianoosh.dev/posts/2026-01-25-the-maintenance-cliff-llms-and-the-learning-loop/</link>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2026-01-25-the-maintenance-cliff-llms-and-the-learning-loop/</guid>
+      
+      <description>&lt;h2 id=&#34;the-assembly-line-fallacy&#34;&gt;The Assembly Line Fallacy&lt;/h2&gt;
+&lt;p&gt;In our industry, there is a persistent temptation to treat software engineering like an assembly line. We constantly aim to abstract work into higher-level languages, reusable components, and &amp;ldquo;black box&amp;rdquo; services to increase velocity.&lt;/p&gt;
+&lt;p&gt;In a recent article on MartinFowler.com, &lt;strong&gt;Unmesh Joshi&lt;/strong&gt; critiques this tendency. He argues that this efficiency-obsessed approach clashes with the most fundamental property of our work: &lt;strong&gt;learning&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;When we rely entirely on readymade solutions without understanding the &amp;ldquo;why&amp;rdquo; and &amp;ldquo;how&amp;rdquo; underneath, we treat code as a static asset rather than a dynamic expression of knowledge.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>Discipline Under Pressure: Shipping Without Messing Up</title>
       <link>https://kianoosh.dev/posts/2025-08-20-discipline-under-pressure-shipping-without-messing-up/</link>
       <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
