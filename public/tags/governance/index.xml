@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Governance on Kianoosh&#39;s Blog</title>
+    <link>https://kianoosh.dev/tags/governance/</link>
+    <description>Recent content in Governance on Kianoosh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://kianoosh.dev/tags/governance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Open Source is Not Enough: The Post-MinIO Era</title>
+      <link>https://kianoosh.dev/posts/2025-12-28-open-source-is-not-enough-the-post-minio-era/</link>
+      <pubDate>Sun, 28 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-12-28-open-source-is-not-enough-the-post-minio-era/</guid>
+      
+      <description>&lt;h2 id=&#34;the-end-of-the-default-choice&#34;&gt;The End of the &amp;ldquo;Default&amp;rdquo; Choice&lt;/h2&gt;
+&lt;p&gt;For years, MinIO has been the reflex choice for S3-compatible object storage in Kubernetes setups, SaaS platforms, and data lakes. It was the standard we all reached for.&lt;/p&gt;
+&lt;p&gt;However, recently (December 3, 2025), the landscape shifted. MinIO officially moved into &lt;strong&gt;maintenance mode&lt;/strong&gt;. This means no new features and, critically, community pull requests are no longer being merged. The development focus has shifted entirely to their commercial offerings.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

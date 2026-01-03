@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Big Data on Kianoosh&#39;s Blog</title>
+    <link>https://kianoosh.dev/tags/big-data/</link>
+    <description>Recent content in Big Data on Kianoosh&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://kianoosh.dev/tags/big-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Lakehouse: Bridging the Gap</title>
+      <link>https://kianoosh.dev/posts/2025-12-27-the-lakehouse-bridging-the-gap/</link>
+      <pubDate>Sat, 27 Dec 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://kianoosh.dev/posts/2025-12-27-the-lakehouse-bridging-the-gap/</guid>
+      
+      <description>&lt;h2 id=&#34;the-great-divide&#34;&gt;The Great Divide&lt;/h2&gt;
+&lt;p&gt;For years, data architecture has been defined by a strict trade-off.&lt;/p&gt;
+&lt;p&gt;On one side, you have &lt;strong&gt;Data Lakes&lt;/strong&gt;: flexible, cheap, and great for unstructured data. On the other, &lt;strong&gt;Data Warehouses&lt;/strong&gt;: providing strong schemas, high performance, and ACID transactions.&lt;/p&gt;
+&lt;p&gt;Both are valuable. But typically, this forces teams to maintain two separate systems. This introduces &amp;ldquo;glue&amp;rdquo; complexity, significant latency, and the nightmare of data duplication.&lt;/p&gt;
+&lt;h2 id=&#34;enter-the-lakehouse&#34;&gt;Enter the Lakehouse&lt;/h2&gt;
+&lt;p&gt;Recently, I’ve been looking into an architecture that attempts to bring the best of both worlds together: the &lt;strong&gt;Lakehouse&lt;/strong&gt;.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
